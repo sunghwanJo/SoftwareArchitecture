@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Sortconfigurator index="1">
+    <sortType>Quick</sortType>
+</Sortconfigurator>
+<Sortconfigurator index="2">
+    <sortType>Bubble</sortType>
+</Sortconfigurator>
