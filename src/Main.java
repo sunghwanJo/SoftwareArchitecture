@@ -3,37 +3,29 @@ import java.io.File;
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
 
+import sort.AlgorithmSettingFactory;
+import sort.IntegerDataSet;
+
 
 public class Main {
 
 	public static void main(String[] args) {
-		File path = new File(".");
-	    String filePath = path.getAbsolutePath()+"/src/";
-	    
-        Serializer serializer = new Persister();
-        File source = new File(filePath + "sortConfigurationInfo.xml");
-         
-        SortConfigurator sortConfigurator = null;
-        try {
-            sortConfigurator = serializer.read(SortConfigurator.class, source);
-        } catch (Exception e) {
-        	e.printStackTrace();
-        }
+
+        int[] tempIntArray = {1, 2, 20, 30, 25, 49, 36};
+        IntegerDataSet intDataSet = new IntegerDataSet(tempIntArray);
+        AlgorithmSettingFactory algorithmSettingFactory = new AlgorithmSettingFactory();
         
-        String sortType = sortConfigurator.getSortType();
-        SortAlgorithm sortAlgorithm = null;
+        //XML File에서 설정된 알고리즘을 적용
+        algorithmSettingFactory.setAlgorithmToIntegerDataSet(intDataSet);
         
-        try {
-			sortAlgorithm = (SortAlgorithm)Class.forName( sortType + "Sort").newInstance();
-		} catch (InstantiationException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
+        System.out.println("적용된 Sorting Method : "+intDataSet.getSortAlgorithm().getSortType());
         
-        IntegerDataSet intDataSet = new IntegerDataSet();
-        intDataSet.setSortAlgorithm(sortAlgorithm);
+        System.out.println("Before sort");
+        intDataSet.printIntArray();
+        System.out.println("\nAfter sort");
+        intDataSet.sort();
+        intDataSet.printIntArray();
+        
+        
 	}
 }

@@ -1,4 +1,4 @@
-import org.simpleframework.xml.Attribute;
+package sort;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
@@ -7,9 +7,6 @@ import org.simpleframework.xml.Root;
 public class SortConfigurator {
 	@Element
 	private String sortType;
-	
-	@Attribute
-	private int index;
 	
 	public SortConfigurator(){
 		super();
