@@ -1,4 +1,7 @@
+import java.util.ArrayList;
+
 
 public interface SortAlgorithm {
-	void sort();
+	void sort(ArrayList<Integer> intLists);
+
 }
