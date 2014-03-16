@@ -30,7 +30,7 @@ public class AlgorithmSettingFactory {
         
 	}
 	
-	public void setAlgorithmToIntegerDataSet(IntegerDataSet integerDataSet){
+	public void setAlgorithmToIntegerDataSet(DataSets integerDataSet){
 		String sortType = this.getAlgorithmTypeFromConfigurator();
         String pacakageName = "sort";
         try {

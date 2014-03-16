@@ -1,15 +1,15 @@
 package sort;
 
-public class IntegerDataSet {
+public class DataSets {
 	
 	private int[] intArray;
 	private SortAlgorithm sortAlgorithm;
 	
-	IntegerDataSet(){
+	DataSets(){
 		
 	}
 	
-	public IntegerDataSet(int[] intArray){
+	public DataSets(int[] intArray){
 		this.intArray = intArray;
 	}
 	

@@ -4,7 +4,7 @@ import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
 
 import sort.AlgorithmSettingFactory;
-import sort.IntegerDataSet;
+import sort.DataSets;
 
 
 public class Main {
@@ -12,7 +12,7 @@ public class Main {
 	public static void main(String[] args) {
 
         int[] tempIntArray = {1, 2, 20, 30, 25, 49, 36};
-        IntegerDataSet intDataSet = new IntegerDataSet(tempIntArray);
+        DataSets intDataSet = new DataSets(tempIntArray);
         AlgorithmSettingFactory algorithmSettingFactory = new AlgorithmSettingFactory();
         
         //XML File에서 설정된 알고리즘을 적용
